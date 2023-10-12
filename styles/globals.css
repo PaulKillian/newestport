@@ -51,21 +51,23 @@ section {
 }
 
 h1, h2, p {
-  color: color(display-p3 1 1 1);
+  color: color(display-p3 0 0 0);
 }
 
 h1 {
-  font-size: 150px;
+  font-size: 150px !important;
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 150px !important;
 }
 
 p {
   font-family: 'Montserrat', sans-serif;
   font-size: x-large;
   text-align: center;
+  mix-blend-mode: exclusion;
+  color: white;
 }
 
 .flex-center {
