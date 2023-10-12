@@ -62,7 +62,7 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
           <div>
-            <div className="full-width-image-container">
+            <div className="full-width-image-container overflow-y-hidden">
               <div >
                 <Image
                   src="/helm2.png" // Path to your image in the public folder
