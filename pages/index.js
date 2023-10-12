@@ -54,7 +54,7 @@ const Scroll = () => {
   return (
     <div>
       <Head>
-        <title>Paul Killian's Portfolio</title>
+        <title>Paul Killian&apos;s Portfolio</title>
         <meta
           name="Paul Killian's Portfolio"
           content="Paul Killian's Portfolio"
