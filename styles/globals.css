@@ -70,6 +70,14 @@ p {
   color: white;
 }
 
+.shadow-md { transition: transform .4s ease-in-out, outline .6s ease-in-out, box-shadow .4s ease-in-out; }
+
+.shadow-md:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  outline: rgb(111, 87, 230) solid 3px;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
