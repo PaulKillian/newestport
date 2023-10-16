@@ -65,7 +65,7 @@ const Scroll = () => {
             <div className="full-width-image-container">
               <div >
                 <Image
-                  src="/helm2.png" // Path to your image in the public folder
+                  src="/asthero.png" // Path to your image in the public folder
                   alt="Full Width Image"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container

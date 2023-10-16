@@ -73,13 +73,14 @@ p {
   transition:
   transform .4s ease-in-out, 
   outline .6s ease-in-out, 
-  box-shadow .4s ease-in-out,
+  box-shadow .4s ease-in-out;
+  transform: scale(1.2);
 }
 
 .shadow-md:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  outline: rgb(111, 87, 230) solid 3px;
+  /* outline: rgb(111, 87, 230) solid 3px; */
 }
 
 .image {
@@ -93,9 +94,8 @@ p {
 .image-Op {
   opacity: 0;
   transition: 
-  transform .6s ease-in-out, 
-  opacity .6s ease-in-out,
-  background-color .10s ease-in-out;
+  transform .8s ease-in-out, 
+  opacity .8s ease-in-out;
   pointer-events: none;
 }
 
@@ -104,7 +104,7 @@ p {
 }
 .container:hover + .image-Op {
   opacity: 1;
-  transform:  scale(1.1) translateY(-30%);
+  transform:  scale(1.3) translateY(-30%);
   pointer-events: none;
 }
 

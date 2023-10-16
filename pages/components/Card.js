@@ -10,10 +10,9 @@ const Card = ({name, img, url, imgOp}) => {
           className='image'
           src={img}
           alt="Project Image" 
-          width={300}
-          height={300}
+          width={200}
+          height={200}
           />
-          
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{name}</div>
         </div>
