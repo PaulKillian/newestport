@@ -16,7 +16,7 @@ import fox from '/public/fox1.png'
 import peacock from '/public/pea.png'
 import Card from './components/Card';
 import { Parallax, useParallax } from 'react-scroll-parallax';
-
+//
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
