@@ -37,13 +37,13 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -110 * (slides.length - 1),
+        xPercent: -150 * (slides.length - 1),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
           pin: true,
           start: 'top top',
-          end: '+=300%',
+          end: '+=400%',
           scrub: 0.5,
         },
       });
@@ -81,16 +81,16 @@ const Scroll = () => {
               ref={horizontalSection}>
               <h2 className="horizontal-panel">Projects</h2>
               <div className="horizontal-panel">
-                <Card name='The Fox, Chicken and Corn' img={'/fox.png'} url={fcc}/>
-                <Card name='Fiduciary Benefits Group' img={'/fbg.png'} url={fbgUrl} />
+                <Card name='The Fox, Chicken and Corn' img={'/fox.png'} url={fcc} imgOp={'/ckin.png'}/>
+                <Card name='Fiduciary Benefits Group' img={'/fbg.png'} url={fbgUrl} imgOp={'/fbgBottom.png'}/>
               </div>
               <div className="horizontal-panel">
-                <Card name='Arrowhead Tree Service' img={'/tree.png'} url={arrowUrl}/>
-                <Card name='Stock SMS Alert' img={'/sms.png'} url={smsUrl}/>
+                <Card name='Arrowhead Tree Service' img={'/tree.png'} url={arrowUrl} imgOp={'/arb3.png'}/>
+                <Card name='Stock SMS Alert' img={'/sms.png'} url={smsUrl} imgOp={'/smsBottom.png'}/>
               </div>
               <div className="horizontal-panel">
-                <Card name='Customer Service Tool' img={'/cst.png'} url={cstUrl}/>
-                <Card name='Data Entry Tool' img={'/cst1.png'} url={cst1Url} />
+                <Card name='Customer Service Tool' img={'/cst.png'} url={cstUrl} imgOp={'/cstBottom.png'}/>
+                <Card name='Data Entry Tool' img={'/cst1.png'} url={cst1Url} imgOp={'/data2.png'}/>
               </div>
             </section>
             <section 

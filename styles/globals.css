@@ -64,9 +64,8 @@ h2 {
 
 p {
   font-family: 'Montserrat', sans-serif;
-  font-size: x-large;
+  font-size: 20px;
   text-align: center;
-  mix-blend-mode: exclusion;
   color: white;
 }
 
@@ -84,30 +83,38 @@ p {
 }
 
 .image {
-  opacity: 1;
   display: block;
   width: 100%;
   height: auto;
-  transition: .5s ease;
+  transition: 1s ease;
   backface-visibility: hidden;
 }
 
-/* .middle {
+.image-Op {
+  opacity: 0;
   transition: 
-  transform .4s ease-in-out, 
-  outline .6s ease-in-out, 
-  box-shadow .4s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-} */
+  transform .6s ease-in-out, 
+  opacity .6s ease-in-out,
+  background-color .10s ease-in-out;
+}
+
+.container {
+  background-color: #FAFAF9;
+}
+.container:hover + .image-Op {
+  opacity: 1;
+  transform:  scale(1.1) translateY(-10%);
+  pointer-events: none;
+}
 
 .container:hover .image {
   transform: scale(1.1);
 }
 
+.blend {
+  mix-blend-mode: difference;
+  text-overflow: clip;
+}
 
 .flex-center {
   display: flex;
