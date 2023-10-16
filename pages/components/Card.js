@@ -1,14 +1,19 @@
-import {Image} from "@nextui-org/react";
+import {UiImage} from "@nextui-org/react";
+import Image from "next/image";
 import {Button} from "@nextui-org/react";
 
 const Card = ({name, img, url, imgOp}) => {
     return (
       <div>
-      <div class="container max-w-sm rounded overflow-hidden shadow-md out-tr bg-stone-100 container">
+      <div class="container max-w-md rounded overflow-hidden shadow-md out-tr bg-stone-100 container">
         <Image
           className='image'
           src={img}
-          alt="Project Image" />
+          alt="Project Image" 
+          width={300}
+          height={300}
+          />
+          
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{name}</div>
         </div>
@@ -20,8 +25,9 @@ const Card = ({name, img, url, imgOp}) => {
         <Image
           src={imgOp}
           alt="Project Image" 
+          width={700}
+          height={700}
         />
-        <h4 className='absolute blend z-10 bg-indigo-400'>The Fox, Chicken and Corn</h4>
       </div>
     </div>
     )

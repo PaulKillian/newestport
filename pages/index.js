@@ -81,20 +81,20 @@ const Scroll = () => {
               ref={horizontalSection}>
               <h2 className="horizontal-panel">Projects</h2>
               <div className="horizontal-panel">
-                <Card name='The Fox, Chicken and Corn' img={'/fox.png'} url={fcc} imgOp={'/ckin.png'}/>
-                <Card name='Fiduciary Benefits Group' img={'/fbg.png'} url={fbgUrl} imgOp={'/fbgBottom.png'}/>
+                <Card name='The Fox, Chicken and Corn' img={'/fox.png'} url={fcc} imgOp={'/chkinBottom2.png'}/>
+                <Card name='Fiduciary Benefits Group' img={'/fbg.png'} url={fbgUrl} imgOp={'/fbgBottom1.png'}/>
               </div>
               <div className="horizontal-panel">
-                <Card name='Arrowhead Tree Service' img={'/tree.png'} url={arrowUrl} imgOp={'/arb3.png'}/>
-                <Card name='Stock SMS Alert' img={'/sms.png'} url={smsUrl} imgOp={'/smsBottom.png'}/>
+                <Card name='Arrowhead Tree Service' img={'/tree.png'} url={arrowUrl} imgOp={'/arbBottom1.png'}/>
+                <Card name='Stock SMS Alert' img={'/sms.png'} url={smsUrl} imgOp={'/smsBottom1.png'}/>
               </div>
               <div className="horizontal-panel">
-                <Card name='Customer Service Tool' img={'/cst.png'} url={cstUrl} imgOp={'/cstBottom.png'}/>
-                <Card name='Data Entry Tool' img={'/cst1.png'} url={cst1Url} imgOp={'/data2.png'}/>
+                <Card name='Customer Service Tool' img={'/cst.png'} url={cstUrl} imgOp={'/cstBottom2.png'}/>
+                <Card name='Data Entry Tool' img={'/cst1.png'} url={cst1Url} imgOp={'/dataBottom1.png'}/>
               </div>
             </section>
             <section 
-              className="bg-indigo-500 flex justify-center items-center position-absolute bottom-0">
+              className="bg-indigo-500 flex justify-center flex-wrap items-center position-absolute bottom-0">
                 <div className="flex justify-between items-center">
                   <Image
                     className='position-relative'

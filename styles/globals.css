@@ -96,6 +96,7 @@ p {
   transform .6s ease-in-out, 
   opacity .6s ease-in-out,
   background-color .10s ease-in-out;
+  pointer-events: none;
 }
 
 .container {
@@ -103,7 +104,7 @@ p {
 }
 .container:hover + .image-Op {
   opacity: 1;
-  transform:  scale(1.1) translateY(-10%);
+  transform:  scale(1.1) translateY(-30%);
   pointer-events: none;
 }
 
