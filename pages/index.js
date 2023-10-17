@@ -62,29 +62,25 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
           <div className='overflow-x-hidden'>
-            <div className="full-width-image-container flex">
-            <h1 className='text-6xl text-stone-50 z-10'>Paul Killian</h1>
-            <Parallax translateY={['400px', '-200px']}>
-              <Image
-                className='ast'
-                src="/as2.png" // Path to your image in the public folder
-                alt="Full Width Image"
-                width={700}
-                height={400}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-              />
-            </Parallax>
-            <div className='flex flex-col'>
-              <div className=''>
-                <h1 className='text-6xl text-stone-50'>Designer</h1>
-                <h1 className='text-6xl text-stone-50'>Developer</h1>
+            <div style={{backgroundImage: 'url(/space.png)'}} 
+              className="full-width-image-container flex">
+              <h1 className='text-6xl text-stone-50 z-10'>Paul Killian</h1>
+              <Parallax translateY={['400px', '-200px']}>
+                <Image
+                  className='ast'
+                  src="/as2.png" // Path to your image in the public folder
+                  alt="Full Width Image"
+                  width={700}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
+                />
+              </Parallax>
+              <div className='flex flex-col'>
+                <div className=''>
+                  <h1 className='text-6xl text-stone-50'>Designer</h1>
+                  <h1 className='text-6xl text-stone-50'>Developer</h1>
+                </div>
               </div>
-            </div>
-              
-              {/* <div className='z-1'>
-                <h1 className='text-xl bg-gray-200 p-1 w-auto text-indigo-500'>PAUL KILLIAN</h1>
-                <p>A UI designer and front-end React developer</p>
-              </div> */}
             </div>
             <section
               className="horizontal-section bg-stone-50"
@@ -103,7 +99,7 @@ const Scroll = () => {
                 <Card name='Data Entry Tool' img={'/cst1.png'} url={cst1Url} imgOp={'/dataBottom1.png'}/>
               </div>
             </section>
-            <section 
+            <section style={{backgroundImage: 'url(/aspacee.png)'}} 
               className="flex justify-center flex-wrap items-center full-width-image-container-bottom">
                 <div className="flex justify-between items-center">
                   <div className='contact absolute' ref={contact}>
