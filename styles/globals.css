@@ -140,11 +140,32 @@ p {
 }
 
 .full-width-image-container {
+  background-image: url(../public/space.png);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-width-image-container-bottom {
+  background-image: url(../public/aspacee.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ast {
+  transform: scale(3);
 }
 
 .site-pop {

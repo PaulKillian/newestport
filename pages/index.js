@@ -37,7 +37,7 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -150 * (slides.length - 1),
+        xPercent: -140 * (slides.length - 1),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
@@ -62,15 +62,25 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
           <div className='overflow-x-hidden'>
-            <div className="full-width-image-container">
-              <div >
-                <Image
-                  src="/asthero.png" // Path to your image in the public folder
-                  alt="Full Width Image"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-                />
+            <div className="full-width-image-container flex">
+            <h1 className='text-6xl text-stone-50 z-10'>Paul Killian</h1>
+            <Parallax translateY={['400px', '-200px']}>
+              <Image
+                className='ast'
+                src="/as2.png" // Path to your image in the public folder
+                alt="Full Width Image"
+                width={700}
+                height={400}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
+              />
+            </Parallax>
+            <div className='flex flex-col'>
+              <div className=''>
+                <h1 className='text-6xl text-stone-50'>Designer</h1>
+                <h1 className='text-6xl text-stone-50'>Developer</h1>
               </div>
+            </div>
+              
               {/* <div className='z-1'>
                 <h1 className='text-xl bg-gray-200 p-1 w-auto text-indigo-500'>PAUL KILLIAN</h1>
                 <p>A UI designer and front-end React developer</p>
@@ -94,53 +104,19 @@ const Scroll = () => {
               </div>
             </section>
             <section 
-              className="bg-indigo-500 flex justify-center flex-wrap items-center position-absolute bottom-0">
+              className="flex justify-center flex-wrap items-center full-width-image-container-bottom">
                 <div className="flex justify-between items-center">
-                  <Image
-                    className='position-relative'
-                    alt='Paul Killian'
-                    src='/me.png'
-                    width={300}
-                    height={400}
-                  />  
-                <div className='contact' ref={contact}>
-                <Parallax translateX={['0px', '300px']}>
-                  <div className='flex'>
-                    <Image 
-                      src="/email.png" // Path to your image in the public folder
-                      alt="Full Width Image"
-                      width={200}
-                      height={100}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-                    />
-                    <h1 className='text-6xl text-stone-50 email'><a href='mailto:psk65lava@gmail.com'>EMAIL</a></h1>
-                  </div>
-                </Parallax>
-                <Parallax translateX={['-200px', '300px']}>
-                  <div className='flex'>
-                    <Image
-                      src="/linkedin.png" // Path to your image in the public folder
-                      alt="Full Width Image"
-                      width={200}
-                      height={100}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-                    />
-                    <h1 className='text-6xl text-stone-50 linked'><a href='https://www.linkedin.com/in/paul-killian/'>LINKEDIN</a></h1>
-                  </div>
-                </Parallax>
-                <Parallax translateX={['0px', '300px']}>
-                  <div className='flex'>
-                    <Image 
-                      src="/github.png" // Path to your image in the public folder
-                      alt="Full Width Image"
-                      width={200}
-                      height={100}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-                    />
-                    <h1 className='text-6xl text-stone-50 github'><a href='https://www.github.com/PaulKillian'>GITHUB</a></h1>
-                  </div>                
-                </Parallax>  
-                </div>                          
+                  <div className='contact absolute' ref={contact}>
+                    <Parallax translateY={['-200px', '150px']}>
+                      <h1 className='text-6xl text-stone-50 email'><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
+                    </Parallax>
+                    <Parallax translateY={['-200px', '200px']}>
+                      <h1 className='text-6xl text-stone-50 linked'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+                    </Parallax>
+                    <Parallax translateY={['-200px', '300px']}>
+                      <h1 className='text-6xl text-stone-50 github'><a href='https://www.github.com/PaulKillian'>Github</a></h1>               
+                    </Parallax>  
+                  </div>                          
               </div>
             </section>
           </div>
