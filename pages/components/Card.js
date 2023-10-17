@@ -21,6 +21,7 @@ const Card = ({name, img, url, imgOp}) => {
       </button> */}
         </div>
       </a>
+      
       <div className='image-Op absolute'>
         <Image
           src={imgOp}
