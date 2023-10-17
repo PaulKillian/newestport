@@ -140,7 +140,7 @@ p {
 }
 
 .full-width-image-container {
-  background-image: url(../public/space.png);
+  background-image: url(https://sparkly-biscuit-dd08ce.netlify.app/public/space.png);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,7 +152,7 @@ p {
 }
 
 .full-width-image-container-bottom {
-  background-image: url(../public/aspacee.png);
+  background-image: url(https://sparkly-biscuit-dd08ce.netlify.app/public/aspacee.png);
   display: flex;
   justify-content: center;
   align-items: center;
