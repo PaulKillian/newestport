@@ -82,7 +82,7 @@ const Scroll = () => {
                 </div>
               </div>
             </div>
-            <section
+            <section 
               className="horizontal-section bg-stone-50"
               ref={horizontalSection}>
               <h2 className="horizontal-panel">Projects</h2>
@@ -132,7 +132,7 @@ const Scroll = () => {
             <section style={{backgroundImage: 'url(/aspacee.png)'}} 
               className="flex justify-center flex-wrap items-center full-width-image-container-bottom">
                 <div className="flex justify-between items-center">
-                  <div className='contact absolute' ref={contact}>
+                  <div style={{backgroundImage: 'url(/bgBottom.png)'}} className='contact absolute px-5' ref={contact}>
                     <Parallax translateY={['-200px', '150px']}>
                       <h1 className='text-6xl text-stone-50 email'><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
                     </Parallax>
