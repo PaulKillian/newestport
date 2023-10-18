@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@900&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 html,
 body {
   background-image: linear-gradient(to bottom, color(display-p3 0.008 0.02 0.027), color(display-p3 0.25 0.25 0.25));
-  font-family: 'Maven Pro', sans-serif;
+  font-family: 'Kaushan Script', cursive;
 }
 
 header {
@@ -54,12 +54,8 @@ h1, h2, p {
   color: color(display-p3 0 0 0);
 }
 
-h1 {
-  font-size: 150px !important;
-}
-
-h2 {
-  font-size: 150px !important;
+h1, h2 {
+  font-size: 190px !important;
 }
 
 p {
@@ -67,6 +63,20 @@ p {
   font-size: 20px;
   text-align: center;
   color: white;
+}
+
+.t-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.text-container {
+  white-space: nowrap;
+  font-size: 24px;
+}
+
+.word {
+  display: flex !important;
 }
 
 .shadow-md { 
@@ -164,8 +174,12 @@ p {
   background-size: contain;
 }
 
+.projects {
+  transform: rotate(10deg);
+}
+
 .ast {
-  transform: scale(3);
+  transform: scale(2);
 }
 
 .site-pop {
