@@ -100,30 +100,12 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className='overflow-x-hidden relative'>
-        <div style={{backgroundImage: 'url(/space.png)'}} 
+        <div style={{backgroundImage: 'url(/me3.png)'}} 
           className="full-width-image-container">
-          <Parallax translateX={['400px', '-200px']}>
-            <Image
-              className='ast'
-              src="/as2.png" // Path to your image in the public folder
-              alt="Full Width Image"
-              width={700}
-              height={400}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-            />
-          </Parallax>
-          <Parallax scale={['-400px', '200px']}>
+          <Parallax translateY={['-300px', '300px']}>
             <TextRotator />
           </Parallax>
         </div>
-        <Image
-          className='absolute meteor bottom-0'
-          src="/met.png" // Path to your image in the public folder
-          alt="Full Width Image"
-          width={200}
-          height={200}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // This makes the image take the full width and height of its container
-        />
         <section 
           className="horizontal-section bg-stone-50"
           ref={horizontalSection}>

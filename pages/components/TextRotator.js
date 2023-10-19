@@ -21,10 +21,10 @@ const TextRotator = () => {
           <h1 className='text-stone-50'>Paul Killian</h1>
         </div>
         <div>
-          <h1 className='text-stone-50'>Developer</h1>
+          <h1 className='text-stone-50'>Font-End Developer</h1>
         </div>
         <div>
-          <h1 className='text-stone-50'>Designer</h1>
+          <h1 className='text-stone-50'>UI/UX Designer</h1>
         </div>
       </Slider>
     </div>

@@ -5,9 +5,9 @@ const Card = ({name, img, url, imgOp}) => {
       <div>
       <a className='shadow-md container' href={url}>
         <div class="max-w-md card rounded overflow-hidden shadow-md out-tr bg-stone-100 container">
-          <div class="text-stone-50 px-2 mb-2">
+          {/* <div class="text-stone-50 px-2 mb-2">
             <div>{name}</div>
-          </div>
+          </div> */}
           <Image
             className='image'
             src={img}
