@@ -189,7 +189,7 @@ const Scroll = () => {
                 name='XX Artists Join Form (Form No Longer Active)'  
                 img={'/artm.png'} 
                 url={xxUrl} 
-                imgOp={'/art2.png'}
+                imgOp={'/art.png'}
               />
             </div>
           </div>
