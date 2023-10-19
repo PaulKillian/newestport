@@ -9,6 +9,7 @@ import useIsomorphicLayoutEffect from './helpers/isomorphicLayout';
 import Card from './components/Card';
 import TextRotator from './components/TextRotator'
 import { Parallax } from 'react-scroll-parallax';
+import { TypeAnimation } from 'react-type-animation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,11 +21,14 @@ const cstUrl = 'https://poetic-khapse-3a8b7b.netlify.app/'
 const arrowUrl = 'https://arrowheadtreeservices.com'
 const smsUrl = 'https://stocksmsalert.com/'
 const cst1Url = 'https://celebrated-paprenjak-3b3a4c.netlify.app/'
+const xxUrl = 'https://6530123454fe2c2a3a4d5960--precious-croissant-8547c8.netlify.app/'
 
 const Scroll = () => {
   const horizontalSection = useRef();
   const project = useRef();
   const contact = useRef();
+
+  const [whichProject, setWhichProject] = useState('Projects')
 
   useEffect(() => {
   //   let typeSplit = new SplitType('.char', {
@@ -46,7 +50,6 @@ const Scroll = () => {
   //       scrub: 0.5,
   //     }
   //   })
-
   gsap.to(".meteor", { rotation: 100, x: 1500, duration: 5 });
   })
 
@@ -67,6 +70,24 @@ const Scroll = () => {
     }, horizontalSection);
     return () => ctx.revert();
   }, []);
+
+  function changeProject(e) {
+    setWhichProject(e.target.alt)
+  }
+
+  const Project = () => {
+    return (
+      <TypeAnimation
+        sequence={[
+          whichProject
+        ]}
+        wrapper="span"
+        speed={30}
+        style={{ fontSize: '100px', position: 'absolute' }}
+        cursor={false}
+      />
+    )
+  }
 
   return (
     <div>
@@ -106,48 +127,71 @@ const Scroll = () => {
         <section 
           className="horizontal-section bg-stone-50"
           ref={horizontalSection}>
-          <h2 className="char projects">Projects</h2>
+          <Project className='absolute'/>
           <div className="horizontal-panel">
-            <Card 
-              name='The Fox, Chicken and Corn' 
-              img={'/fox.png'} 
-              url={fcc} 
-              imgOp={'/chkinBottom2.png'}
-            />
-            <Card 
-              name='Fiduciary Benefits Group' 
-              img={'/fbg.png'} 
-              url={fbgUrl} 
-              imgOp={'/fbgBottom1.png'}
-            />
+            <div onMouseOver={() => changeProject(event)}>
+              <Card
+                id='The Fox, Chicken and Corn'
+                name='The Fox, Chicken and Corn' 
+                img={'/fox.png'} 
+                url={fcc} 
+                imgOp={'/chkinBottom2.png'}
+              />
+            </div>
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Fiduciary Benefits Group' 
+                img={'/fbg.png'} 
+                url={fbgUrl} 
+                imgOp={'/fbgBottom1.png'}
+              />
+            </div> 
           </div>
           <div className="horizontal-panel">
-            <Card 
-              name='Arrowhead Tree Service' 
-              img={'/tree.png'} 
-              url={arrowUrl} 
-              imgOp={'/arbBottom1.png'}
-            />
-            <Card 
-              name='Stock SMS Alert' 
-              img={'/sms.png'} 
-              url={smsUrl} 
-              imgOp={'/smsBottom1.png'}
-            />
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Arrowhead Tree Service' 
+                img={'/tree.png'} 
+                url={arrowUrl} 
+                imgOp={'/arbBottom1.png'}
+              />
+            </div>
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Stock SMS Alert' 
+                img={'/sms.png'} 
+                url={smsUrl} 
+                imgOp={'/smsBottom1.png'}
+              />
+            </div>
           </div>
           <div className="horizontal-panel">
-            <Card 
-              name='Customer Service Tool' 
-              img={'/cst.png'} 
-              url={cstUrl} 
-              imgOp={'/cstBottom2.png'}
-            />
-            <Card 
-              name='Data Entry Tool'  
-              img={'/cst1.png'} 
-              url={cst1Url} 
-              imgOp={'/dataBottom1.png'}
-            />
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Customer Service Tool' 
+                img={'/cst.png'} 
+                url={cstUrl} 
+                imgOp={'/cstBottom2.png'}
+              />
+            </div>
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Data Entry Tool'  
+                img={'/cst1.png'} 
+                url={cst1Url} 
+                imgOp={'/dataBottom1.png'}
+              />
+            </div>
+          </div >
+          <div className="horizontal-panel odd-panel">
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='XX Artists Join Form (Form No Longer Active)'  
+                img={'/artm.png'} 
+                url={xxUrl} 
+                imgOp={'/art2.png'}
+              />
+            </div>
           </div>
         </section>
         <section style={{backgroundImage: 'url(/aspacee.png)'}} 

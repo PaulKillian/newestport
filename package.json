@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
+    "@uidotdev/usehooks": "^2.4.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "jquery": "^3.7.1",
@@ -18,6 +19,7 @@
     "react-dom": "latest",
     "react-scroll-parallax": "^3.4.2",
     "react-slick": "^0.29.0",
+    "react-type-animation": "^3.2.0",
     "slick-carousel": "^1.8.1",
     "split-type": "^0.3.3"
   },

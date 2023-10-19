@@ -148,7 +148,13 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* position: relative; */
+}
+
+.odd-panel {
+  width: 50% !important;
+  justify-content:flex-start;
+  left: 190px;
+  position: relative;
 }
 
 .full-width-image-container {

@@ -11,7 +11,7 @@ const Card = ({name, img, url, imgOp}) => {
           <Image
             className='image'
             src={img}
-            alt="Project Image" 
+            alt={name}
             width={200}
             height={200}
           />
