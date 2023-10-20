@@ -10,7 +10,7 @@ import Card from './components/Card';
 import TextRotator from './components/TextRotator'
 import { Parallax } from 'react-scroll-parallax';
 import { TypeAnimation } from 'react-type-animation';
-import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
+import { ParallaxBanner, BannerLayer } from 'react-scroll-parallax';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +33,33 @@ const Scroll = () => {
 
   const [whichProject, setWhichProject] = useState('Projects')
   const [whichWork, setWhichWork] = useState('')
+
+  const background = {
+    image:
+      'ats.png',
+    translateY: [0, 50],
+    opacity: [1, 0.3],
+    scale: [1.05, 1, 'easeOutCubic'],
+    shouldAlwaysCompleteAnimation: true,
+  };
+
+  const foreground = {
+    image:
+      'planet.png',
+    translateY: [0, 15],
+    scale: [1, 1.1, 'easeOutCubic'],
+    shouldAlwaysCompleteAnimation: true,
+  };
+
+  const gradientOverlay = {
+    opacity: [0, 1],
+    shouldAlwaysCompleteAnimation: true,
+    expanded: true,
+    children: (
+      <div className="absolute inset-0 bg-gradient-to-t bg" />
+    ),
+  };
+
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -66,7 +93,7 @@ const Scroll = () => {
         ]}
         wrapper="span"
         speed={30}
-        style={{ fontSize: '5vw', position: 'absolute', color: '#FAFAF9' }}
+        style={{ fontSize: '8vw', position: 'absolute', color: '#FAFAF9' }}
         cursor={false}
       />
     )
@@ -83,18 +110,16 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className='overflow-x-hidden relative'>
-        {/* <div style={{backgroundImage: 'url(/me3.png)'}} 
-          className="full-width-image-container">
-          <Parallax translateY={['-300px', '300px']}>
-            <TextRotator />
-          </Parallax>
-        </div> */}
-        <ParallaxBanner
+        {/* <ParallaxBanner
           layers={[
-            { image: '/ats.png', speed: -20 },
-            { image: '/planet.png', speed: -0 },
+            { image: '/ats.png', speed: -30 },
+            { image: '/planet.png', speed: 5 },
           ]}
           className="aspect-[2/1]"
+        > */}
+        <ParallaxBanner
+          layers={[background, foreground, gradientOverlay]}
+          className="aspect-[2/1] bg-gray-900"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <TextRotator />
@@ -145,9 +170,9 @@ const Scroll = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Customer Service Tool' 
-                img={'/cst.png'} 
+                img={'/cst5.png'} 
                 url={cstUrl} 
-                imgOp={'/cstBottom2.png'}
+                imgOp={'/cst6.png'}
               />
             </div>
             <div onMouseOver={() => changeProject(event)}>
@@ -162,7 +187,7 @@ const Scroll = () => {
           <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
               <Card 
-                name='XX Artists Join Form (Form No Longer Active)'  
+                name='XX Artists Career Form'  
                 img={'/artm.png'} 
                 url={xxUrl} 
                 imgOp={'/art.png'}
@@ -173,7 +198,7 @@ const Scroll = () => {
                 name='Real Estate Lifeline'
                 id='Google/Microsoft Calendar Integration'
                 img={'/real1.png'} 
-                url={xxUrl} 
+                url={realUrl} 
                 imgOp={'/real.png'}
               />
             </div>
@@ -200,18 +225,19 @@ const Scroll = () => {
         <section>
         <ParallaxBanner 
           layers={[
-            { image: '/asst1.png', speed: -20 },
+            { image: '/spc.png', speed: 10 },
             {
-              speed: -45,
+              speed: 45,
               children: ( 
-                <div className='absolute inset-0 flex items-center justify-around z-10'>
-                  <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
+                <div className='absolute inset-0 flex items-center justify-center text-center w-3/4'>
+                  {/* <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
                   <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-                  <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1>
+                  <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1> */}
+                  <p className='text-center m-auto'>Web development can be likened to space exploration in its endless potential and vastness of possibilities. Just like the unexplored depths of the universe, the world of web development is a boundless expanse of creativity and innovation. Much like astronauts charting unknown territories, web developers venture into uncharted digital realms, pushing the boundaries of technology and human imagination. Just as space exploration requires collaboration among scientists, engineers, and researchers from diverse fields, web development thrives on the synergy of different skills, from coding and design to user experience and data analysis. Both endeavors are fueled by an insatiable curiosity, driving individuals to delve deeper, reach higher, and uncover the hidden mysteries of their respective frontiers. In both realms, pioneers constantly strive to create new pathways, building upon the knowledge of the past to propel humanity into a future defined by limitless opportunities.</p>
                 </div>                  
               ),
             },
-            { image: '/planet.png', speed: -0 },
+            { image: '/spc1.png', speed: 0 },
           ]}
           className="aspect-[2/1]"
         />
