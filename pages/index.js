@@ -10,6 +10,7 @@ import Card from './components/Card';
 import TextRotator from './components/TextRotator'
 import { Parallax } from 'react-scroll-parallax';
 import { TypeAnimation } from 'react-type-animation';
+import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -22,42 +23,22 @@ const arrowUrl = 'https://arrowheadtreeservices.com'
 const smsUrl = 'https://stocksmsalert.com/'
 const cst1Url = 'https://celebrated-paprenjak-3b3a4c.netlify.app/'
 const xxUrl = 'https://6530123454fe2c2a3a4d5960--precious-croissant-8547c8.netlify.app/'
+const realUrl = 'https://realestatelifeline.app/'
 
 const Scroll = () => {
   const horizontalSection = useRef();
   const project = useRef();
   const contact = useRef();
+  const skills = useRef()
 
   const [whichProject, setWhichProject] = useState('Projects')
-
-  useEffect(() => {
-  //   let typeSplit = new SplitType('.char', {
-  //     types: 'lines, words, chars',
-  //     tagName: 'span'
-  //   })
-
-    
-  //   gsap.from('.char', {
-  //     y: '50%',
-  //     opacity: 1,
-  //     rotationZ: '30',
-  //     duration: 3,
-  //     stagger: 0.5,
-      
-  //     scrollTrigger: {
-  //       trigger: '.char',
-  //       start: 'center',
-  //       scrub: 0.5,
-  //     }
-  //   })
-  gsap.to(".meteor", { rotation: 100, x: 1500, duration: 5 });
-  })
+  const [whichWork, setWhichWork] = useState('')
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -170 * (slides.length - 1),
+        xPercent: -135 * (slides.length - 1),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
@@ -72,7 +53,9 @@ const Scroll = () => {
   }, []);
 
   function changeProject(e) {
+    // debugger
     setWhichProject(e.target.alt)
+    setWhichWork(e.target.id)
   }
 
   const Project = () => {
@@ -83,7 +66,7 @@ const Scroll = () => {
         ]}
         wrapper="span"
         speed={30}
-        style={{ fontSize: '100px', position: 'absolute' }}
+        style={{ fontSize: '5vw', position: 'absolute', color: '#FAFAF9' }}
         cursor={false}
       />
     )
@@ -100,19 +83,30 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className='overflow-x-hidden relative'>
-        <div style={{backgroundImage: 'url(/me3.png)'}} 
+        {/* <div style={{backgroundImage: 'url(/me3.png)'}} 
           className="full-width-image-container">
           <Parallax translateY={['-300px', '300px']}>
             <TextRotator />
           </Parallax>
-        </div>
-        <section 
-          className="horizontal-section bg-stone-50"
+        </div> */}
+        <ParallaxBanner
+          layers={[
+            { image: '/ats.png', speed: -20 },
+            { image: '/planet.png', speed: -0 },
+          ]}
+          className="aspect-[2/1]"
+        >
+          <div className="absolute inset-0 flex items-center justify-center">
+            <TextRotator />
+          </div>
+        </ParallaxBanner>
+        <section
+          className="horizontal-section"
           ref={horizontalSection}>
           <Project className='absolute'/>
-          <div className="horizontal-panel">
+          <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
-              <Card
+              <Card 
                 id='The Fox, Chicken and Corn'
                 name='The Fox, Chicken and Corn' 
                 img={'/fox.png'} 
@@ -123,13 +117,13 @@ const Scroll = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Fiduciary Benefits Group' 
-                img={'/fbg.png'} 
+                img={'/fbga1.png'} 
                 url={fbgUrl} 
-                imgOp={'/fbgBottom1.png'}
+                imgOp={'/fbga.png'}
               />
             </div> 
           </div>
-          <div className="horizontal-panel">
+          <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Arrowhead Tree Service' 
@@ -141,13 +135,13 @@ const Scroll = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Stock SMS Alert' 
-                img={'/sms.png'} 
+                img={'/sms1.png'} 
                 url={smsUrl} 
-                imgOp={'/smsBottom1.png'}
+                imgOp={'/smsa.png'}
               />
             </div>
           </div>
-          <div className="horizontal-panel">
+          <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Customer Service Tool' 
@@ -159,13 +153,13 @@ const Scroll = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Data Entry Tool'  
-                img={'/cst1.png'} 
+                img={'/dat4.png'} 
                 url={cst1Url} 
-                imgOp={'/dataBottom1.png'}
+                imgOp={'/dat.png'}
               />
             </div>
           </div >
-          <div className="horizontal-panel odd-panel">
+          <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='XX Artists Join Form (Form No Longer Active)'  
@@ -174,23 +168,53 @@ const Scroll = () => {
                 imgOp={'/art.png'}
               />
             </div>
+            <div onMouseOver={() => changeProject(event)}>
+              <Card 
+                name='Real Estate Lifeline'
+                id='Google/Microsoft Calendar Integration'
+                img={'/real1.png'} 
+                url={xxUrl} 
+                imgOp={'/real.png'}
+              />
+            </div>
           </div>
         </section>
-        <section style={{backgroundImage: 'url(/aspacee.png)'}} 
-          className="flex justify-center flex-wrap items-center full-width-image-container-bottom">
-            <div className="flex justify-between items-center">
-              <div className='contact absolute px-5' ref={contact}>
-                <Parallax translateY={['-200px', '140px']}>
-                  <h1 className='text-6xl text-stone-50 email'><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
-                </Parallax>
-                <Parallax translateY={['-200px', '200px']}>
-                  <h1 className='text-6xl text-stone-50 linked'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-                </Parallax>
-                <Parallax translateY={['-200px', '340px']}>
-                  <h1 className='text-6xl text-stone-50 github'><a href='https://www.github.com/PaulKillian'>Github</a></h1>               
-                </Parallax>  
-              </div>                          
+        <section style={{backgroundImage: 'url(/bg.png)'}} 
+          className="full-width-image-container bg-dblue flex flex-wrap justify-center ">
+          <Parallax translateX={['-200px', '0px']}>
+            <h1 className='text-center text-stone-50'>SKILLS</h1>
+          </Parallax>
+          <div className='align-text-top'>
+            <Parallax translateX={['200px', '0px']}>
+              <div className='relative rotate'>
+                <Image
+                  src='/sCircle.png'
+                  alt=''
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            </Parallax>
           </div>
+        </section>
+        <section>
+        <ParallaxBanner 
+          layers={[
+            { image: '/asst1.png', speed: -20 },
+            {
+              speed: -45,
+              children: ( 
+                <div className='absolute inset-0 flex items-center justify-around z-10'>
+                  <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
+                  <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+                  <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1>
+                </div>                  
+              ),
+            },
+            { image: '/planet.png', speed: -0 },
+          ]}
+          className="aspect-[2/1]"
+        />
         </section>
       </div>
     </div>
