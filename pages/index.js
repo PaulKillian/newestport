@@ -37,26 +37,25 @@ const Scroll = () => {
   const background = {
     image:
       'ats.png',
-    translateY: [0, 50],
-    opacity: [1, 0.3],
-    scale: [1.05, 1, 'easeOutCubic'],
+    translateY: [0, -10],
+    scale: [1.25, 1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
   };
 
   const foreground = {
     image:
-      'planet.png',
-    translateY: [0, 15],
-    scale: [1, 1.1, 'easeOutCubic'],
+      'rocks.png',
+    translateY: [10, -12],
+    scale: [1.5, 1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
   };
 
   const gradientOverlay = {
-    opacity: [0, 1],
+    opacity: [0, 2],
     shouldAlwaysCompleteAnimation: true,
     expanded: true,
     children: (
-      <div className="absolute inset-0 bg-gradient-to-t bg" />
+      <div className="absolute inset-0 main-bg" />
     ),
   };
 
@@ -65,13 +64,13 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -135 * (slides.length - 1),
+        xPercent: -110 * (slides.length),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
           pin: true,
           start: 'top top',
-          end: '+=400%',
+          end: '+=500%',
           scrub: 0.5,
         },
       });
@@ -80,7 +79,6 @@ const Scroll = () => {
   }, []);
 
   function changeProject(e) {
-    // debugger
     setWhichProject(e.target.alt)
     setWhichWork(e.target.id)
   }
@@ -92,7 +90,7 @@ const Scroll = () => {
           whichProject
         ]}
         wrapper="span"
-        speed={30}
+        speed={40}
         style={{ fontSize: '8vw', position: 'absolute', color: '#FAFAF9' }}
         cursor={false}
       />
@@ -110,16 +108,9 @@ const Scroll = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className='overflow-x-hidden relative'>
-        {/* <ParallaxBanner
-          layers={[
-            { image: '/ats.png', speed: -30 },
-            { image: '/planet.png', speed: 5 },
-          ]}
-          className="aspect-[2/1]"
-        > */}
         <ParallaxBanner
           layers={[background, foreground, gradientOverlay]}
-          className="aspect-[2/1] bg-gray-900"
+          className="aspect-[2/1]"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <TextRotator />
@@ -203,44 +194,45 @@ const Scroll = () => {
               />
             </div>
           </div>
+          <section
+            className="full-width-image-container horizontal-panel">
+            <div className='align-text-top'>
+              
+                <div className='relative rotate'>
+                  <Image onMouseOver={() => changeProject(event)}
+                    src='/sCircle.png'
+                    alt='Skills'
+                    fill={true}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+   
+            </div>
+          </section>
         </section>
-        <section style={{backgroundImage: 'url(/bg.png)'}} 
-          className="full-width-image-container bg-dblue flex flex-wrap justify-center ">
-          <Parallax translateX={['-200px', '0px']}>
-            <h1 className='text-center text-stone-50'>SKILLS</h1>
-          </Parallax>
-          <div className='align-text-top'>
-            <Parallax translateX={['200px', '0px']}>
-              <div className='relative rotate'>
-                <Image
-                  src='/sCircle.png'
-                  alt=''
-                  fill={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            </Parallax>
-          </div>
-        </section>
+        
         <section>
-        <ParallaxBanner 
-          layers={[
-            { image: '/spc.png', speed: 10 },
-            {
-              speed: 45,
-              children: ( 
-                <div className='absolute inset-0 flex items-center justify-center text-center w-3/4'>
-                  {/* <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
-                  <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-                  <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1> */}
-                  <p className='text-center m-auto'>Web development can be likened to space exploration in its endless potential and vastness of possibilities. Just like the unexplored depths of the universe, the world of web development is a boundless expanse of creativity and innovation. Much like astronauts charting unknown territories, web developers venture into uncharted digital realms, pushing the boundaries of technology and human imagination. Just as space exploration requires collaboration among scientists, engineers, and researchers from diverse fields, web development thrives on the synergy of different skills, from coding and design to user experience and data analysis. Both endeavors are fueled by an insatiable curiosity, driving individuals to delve deeper, reach higher, and uncover the hidden mysteries of their respective frontiers. In both realms, pioneers constantly strive to create new pathways, building upon the knowledge of the past to propel humanity into a future defined by limitless opportunities.</p>
-                </div>                  
-              ),
-            },
-            { image: '/spc1.png', speed: 0 },
-          ]}
-          className="aspect-[2/1]"
-        />
+          <ParallaxBanner 
+            layers={[
+              { image: '/beach.png', speed: 20 },
+              {
+                speed: -5,
+                children: ( 
+                  <div className='absolute inset-0 flex items-center justify-center'>
+                    {/* <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
+                    <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+                    <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1> */}
+                    <p className='w-2/4 text-left text-gray-800'>I liken web development to space exploration in its endless potential and vastness of possibilities. Just like the unexplored depths of the universe, the world of web development is a boundless expanse of creativity and innovation.
+                      <br /><br />
+                      When I am not working, I am at the beach with my family digging deep holes for my children to play in.
+                    </p>
+                  </div>                  
+                ),
+              },
+              { image: '/spc1.png', speed: -17 },
+            ]}
+            className="aspect-[2/1]"
+          />
         </section>
       </div>
     </div>

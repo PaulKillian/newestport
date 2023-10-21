@@ -10,7 +10,9 @@ html,
 body {
   /* background-image: linear-gradient(to bottom, color(display-p3 0.008 0.02 0.027), color(display-p3 0.25 0.25 0.25)); */
   font-family: 'Kaushan Script', cursive;
-  background-color: #0B0D22;
+  /* background-color: #4783B3; */
+  background: rgb(250,250,249);
+  background: linear-gradient(0deg, rgba(250,250,249,1) 0%, rgba(71,131,179,1) 46%);
 }
 
 header {
@@ -57,7 +59,7 @@ h1, h2, h3 {
 
 p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 2vw;
   text-align: center;
   color: white;
 }
@@ -87,15 +89,20 @@ p {
   mix-blend-mode: normal;
 }
 
+.main-bg {
+  background: rgb(250,250,249);
+background: linear-gradient(180deg, rgba(250,250,249,0) 53%, rgba(71,131,179,1) 100%);
+}
 .bg {
-  background-color: #0B0D22;
+  background: rgb(250,250,249);
+background: radial-gradient(circle, rgba(250,250,249,0) 10%, rgba(71,131,179,1) 44%, rgba(71,131,179,0) 73%);
   z-index: -1;
 }
 
 .shadow-md { 
   transition:
-  transform .4s ease-in-out,  
-  box-shadow .4s ease-in-out;
+  transform .8s ease-in-out,  
+  box-shadow .8s ease-in-out;
   transform: scale(1.2);
 }
 
