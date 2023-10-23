@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.1.13",
+    "@react-three/drei": "^9.88.4",
+    "@react-three/fiber": "^8.15.3",
     "@uidotdev/usehooks": "^2.4.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
@@ -21,7 +25,8 @@
     "react-slick": "^0.29.0",
     "react-type-animation": "^3.2.0",
     "slick-carousel": "^1.8.1",
-    "split-type": "^0.3.3"
+    "split-type": "^0.3.3",
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "autoprefixer": "latest",

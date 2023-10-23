@@ -2,17 +2,17 @@ import Image from "next/image";
 
 const Card = ({name, img, url, imgOp, id}) => {
     return (
-      <div className="blend">
+      <div>
       <a className='shadow-md container' target="_blank" href={url}>
-        <div class="max-w-md card rounded overflow-hidden shadow-md out-tr bg-stone-100 container">
+        <div class="max-w-md floating card bg-card rounded overflow-hidden shadow-md out-tr container">
           <Image
-            className='image'
+            className='image blend'
             id={id}
             src={img}
             alt={name}
             width={250}
             height={250}
-          />
+          />  
         </div>
       </a>
       <div className='image-Op absolute'>

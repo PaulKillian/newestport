@@ -8,9 +8,12 @@ import {Image} from "@nextui-org/react";
 import useIsomorphicLayoutEffect from './helpers/isomorphicLayout';
 import Card from './components/Card';
 import TextRotator from './components/TextRotator'
+import FooterCard from './components/FooterCard'
 import { Parallax } from 'react-scroll-parallax';
 import { TypeAnimation } from 'react-type-animation';
 import { ParallaxBanner, BannerLayer } from 'react-scroll-parallax';
+import { about } from './components/FooterCard'
+import Navbar from './components/Navbar'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +35,7 @@ const Scroll = () => {
   const skills = useRef()
 
   const [whichProject, setWhichProject] = useState('Projects')
-  const [whichWork, setWhichWork] = useState('')
+  const [whichBg, setWhichBg] = useState('')
 
   const background = {
     image:
@@ -64,7 +67,7 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -110 * (slides.length),
+        xPercent: -100 * (slides.length),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
@@ -80,7 +83,6 @@ const Scroll = () => {
 
   function changeProject(e) {
     setWhichProject(e.target.alt)
-    setWhichWork(e.target.id)
   }
 
   const Project = () => {
@@ -118,8 +120,10 @@ const Scroll = () => {
         </ParallaxBanner>
         <section
           className="horizontal-section"
-          ref={horizontalSection}>
-          <Project className='absolute'/>
+          ref={horizontalSection}
+          style={{backgroundImage: 'url(/oc3.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+        >
+          <Project id='projects' className='absolute'/>
           <div className="horizontal-panel bg">
             <div onMouseOver={() => changeProject(event)}>
               <Card 
@@ -197,42 +201,37 @@ const Scroll = () => {
           <section
             className="full-width-image-container horizontal-panel">
             <div className='align-text-top'>
-              
-                <div className='relative rotate'>
-                  <Image onMouseOver={() => changeProject(event)}
-                    src='/sCircle.png'
-                    alt='Skills'
-                    fill={true}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-   
+              <div className='relative rotate floating'>
+                <Image 
+                  onMouseOver={() => changeProject(event)}
+                  className='glass-skill rounded-full'
+                  src='/sCircle.png'
+                  alt='Skills'
+                  fill={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
             </div>
           </section>
-        </section>
-        
-        <section>
-          <ParallaxBanner 
-            layers={[
-              { image: '/beach.png', speed: 20 },
-              {
-                speed: -5,
-                children: ( 
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    {/* <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
-                    <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-                    <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1> */}
-                    <p className='w-2/4 text-left text-gray-800'>I liken web development to space exploration in its endless potential and vastness of possibilities. Just like the unexplored depths of the universe, the world of web development is a boundless expanse of creativity and innovation.
-                      <br /><br />
-                      When I am not working, I am at the beach with my family digging deep holes for my children to play in.
-                    </p>
-                  </div>                  
-                ),
-              },
-              { image: '/spc1.png', speed: -17 },
-            ]}
-            className="aspect-[2/1]"
-          />
+        </section>    
+        <section className='bg-bottom' style={{backgroundImage: `url(/${whichBg}.png)`, backgroundRepeat: 'no-repeat'}}>
+          <div className="full-width-image-container-bottom fade-in">
+            <h1 className='text-center'>About Me</h1>
+            <div className='flex flex-wrap justify-around'>
+              {about.map((aboutItem, index) => {
+                return (
+                  <FooterCard 
+                    setWhichBg={setWhichBg}
+                    key={index}
+                    title={aboutItem.title}
+                    descript={aboutItem.descript}
+                    img={aboutItem.img} 
+                    name={aboutItem.name}
+                  />
+                )
+              })} 
+            </div>
+          </div>
         </section>
       </div>
     </div>
