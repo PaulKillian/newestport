@@ -35,7 +35,6 @@ const Scroll = () => {
   const skills = useRef()
 
   const [whichProject, setWhichProject] = useState('Projects')
-  const [whichBg, setWhichBg] = useState('')
 
   const background = {
     image:
@@ -214,17 +213,13 @@ const Scroll = () => {
             </div>
           </section>
         </section>    
-        <section className='bg-bottom'
-          style={{backgroundImage: `url(/${whichBg}.png)`, 
-          backgroundRepeat: 'no-repeat'}}
-        >
+        <section className='bg-bottom'>
           <div className="full-width-image-container-bottom fade-in">
             <h1 className='text-center'>About Me</h1>
             <div className='flex flex-wrap justify-around'>
               {about.map((aboutItem, index) => {
                 return (
                   <FooterCard 
-                    setWhichBg={setWhichBg}
                     key={index}
                     title={aboutItem.title}
                     descript={aboutItem.descript}

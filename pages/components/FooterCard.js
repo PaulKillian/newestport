@@ -22,15 +22,11 @@ export const about =
     }
   ]
 
-export default function FooterCard({setWhichBg, title, descript, img, name}) {
-  function changeBg(e) {
-    setWhichBg(e.target.alt)
-  }
+export default function FooterCard({title, descript, img, name}) {
 
   return (
     <div class="max-w-sm border border-gray-200 rounded-lg shadow m-3">
       <Image 
-        onMouseOver={() => changeBg(event)}
         class="rounded-t-lg" 
         src={img}
         alt={name} 
@@ -38,7 +34,7 @@ export default function FooterCard({setWhichBg, title, descript, img, name}) {
         height={50}
       />
       <div class="p-2 glass">
-        <h5 class="mb-2 text-4xl tracking-tight font-bold tracking-tight text-white">{title}</h5>
+        <h5 class="mb-2 text-2xl tracking-tight font-bold tracking-tight text-white">{title}</h5>
         <p class="mb-3 text-stone-50 font-normal text-left text-gray-900">{descript}</p>
       </div>
     </div>
