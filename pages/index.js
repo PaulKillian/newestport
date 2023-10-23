@@ -201,7 +201,7 @@ const Scroll = () => {
           <section
             className="full-width-image-container horizontal-panel">
             <div className='align-text-top'>
-              <div className='relative rotate floating'>
+              <div className='relative rotate'>
                 <Image 
                   onMouseOver={() => changeProject(event)}
                   className='glass-skill rounded-full'
@@ -214,7 +214,10 @@ const Scroll = () => {
             </div>
           </section>
         </section>    
-        <section className='bg-bottom' style={{backgroundImage: `url(/${whichBg}.png)`, backgroundRepeat: 'no-repeat'}}>
+        <section className='bg-bottom'
+          style={{backgroundImage: `url(/${whichBg}.png)`, 
+          backgroundRepeat: 'no-repeat'}}
+        >
           <div className="full-width-image-container-bottom fade-in">
             <h1 className='text-center'>About Me</h1>
             <div className='flex flex-wrap justify-around'>
