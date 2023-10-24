@@ -16,7 +16,7 @@ export const about =
     }, 
     {
       title: 'Body Boarding',
-      descript: "I have ridden waves my whole life. There's little that compares to the thrill of racing down the face of a wave.",
+      descript: "I have ridden waves my whole life. There's little that compares to the thrill of flying down a wave.",
       img: '/wave.png',
       name: 'wave'
     }
