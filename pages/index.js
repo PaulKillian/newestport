@@ -66,7 +66,7 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -100 * (slides.length),
+        xPercent: -80 * (slides.length),
         ease: 'none',
         scrollTrigger: {
           trigger: horizontalSection.current,
@@ -120,7 +120,7 @@ const Scroll = () => {
         <section
           className="horizontal-section"
           ref={horizontalSection}
-          style={{backgroundImage: 'url(/oc3.png)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+          style={{backgroundImage: 'url(/underwater2.gif)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
         >
           <Project id='projects' className='absolute'/>
           <div className="horizontal-panel bg">
@@ -198,7 +198,7 @@ const Scroll = () => {
             </div>
           </div>
           <section
-            className="full-width-image-container horizontal-panel">
+            className="full-width-image-container horizontal-panel bg">
             <div className='align-text-top'>
               <div className='relative rotate'>
                 <Image 
@@ -213,7 +213,14 @@ const Scroll = () => {
             </div>
           </section>
         </section>    
-        <section className='bg-bottom'>
+        <section  
+          style={{
+            backgroundImage: 'url(/orb.png)', 
+            backgroundRepeat: 'no-repeat', 
+            backgroundPosition: 'top top',
+          }}
+          className='bg-bottom'
+        >
           <div className="full-width-image-container-bottom fade-in">
             <h1 className='text-center'>About Me</h1>
             <div className='flex flex-wrap justify-around'>
