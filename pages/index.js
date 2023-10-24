@@ -215,8 +215,7 @@ const Scroll = () => {
         </section>    
         <section  
           style={{
-            backgroundImage: 'url(/orb.png)', 
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: 'url(/orb.png)'
           }}
           className='bg-bottom'
         >
