@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import Head from 'next/head';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -9,10 +9,9 @@ import Card from './components/Card';
 import TextRotator from './components/TextRotator'
 import FooterCard from './components/FooterCard'
 import Navbar from './components/Navbar'
-import { TypeAnimation } from 'react-type-animation';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { about } from './components/FooterCard'
-import { changeProject, removeOrAddOverflow } from './helpers/Helpers'
+import Project from './components/Project'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -27,7 +26,7 @@ const cst1Url = 'https://celebrated-paprenjak-3b3a4c.netlify.app/'
 const xxUrl = 'https://6530123454fe2c2a3a4d5960--precious-croissant-8547c8.netlify.app/'
 const realUrl = 'https://realestatelifeline.app/'
 
-const Scroll = () => {
+const App = () => {
   const horizontalSection = useRef();
   const project = useRef();
   const contact = useRef();
@@ -78,18 +77,16 @@ const Scroll = () => {
     return () => ctx.revert();
   }, []);
 
-  const Project = () => {
-    return (
-      <TypeAnimation
-        sequence={[
-          whichProject
-        ]}
-        wrapper="span"
-        speed={40}
-        style={{ fontSize: '8vw', position: 'absolute', color: '#FAFAF9' }}
-        cursor={false}
-      />
-    )
+  const removeOrAddOverflow = (e) => {
+    if (e.target.className) {
+      if (e.target.className === 'blend') {
+        const element = document.getElementById('overFlow')
+        element.classList.add('overflow-x-hidden');
+      } else {
+        const element = document.getElementById('overFlow')
+        element.classList.remove('overflow-x-hidden');
+      }
+    }
   }
 
   return (
@@ -122,7 +119,10 @@ const Scroll = () => {
           style={{backgroundImage: 'url(/underwater2.gif)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
           onMouseOver={() => removeOrAddOverflow(event)}
         >
-          <Project className='absolute mt-5'/>
+          <Project 
+            className='absolute mt-5'
+            whichProject={whichProject}
+          />
           <div className="horizontal-panel bg">
             <div>
               <Card 
@@ -257,4 +257,4 @@ const Scroll = () => {
   );
 };
 
-export default Scroll;
+export default App;
