@@ -3,17 +3,16 @@ import { useRef, useState, useEffect } from 'react';
 import Head from 'next/head';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import SplitType from 'split-type'
 import {Image} from "@nextui-org/react";
 import useIsomorphicLayoutEffect from './helpers/isomorphicLayout';
 import Card from './components/Card';
 import TextRotator from './components/TextRotator'
 import FooterCard from './components/FooterCard'
-import { Parallax } from 'react-scroll-parallax';
-import { TypeAnimation } from 'react-type-animation';
-import { ParallaxBanner, BannerLayer } from 'react-scroll-parallax';
-import { about } from './components/FooterCard'
 import Navbar from './components/Navbar'
+import { TypeAnimation } from 'react-type-animation';
+import { ParallaxBanner } from 'react-scroll-parallax';
+import { about } from './components/FooterCard'
+import { changeProject, removeOrAddOverflow } from './components/Helpers/Helpers'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -45,8 +44,7 @@ const Scroll = () => {
   };
 
   const foreground = {
-    image:
-      'rocks.png',
+    image: 'rocks.png',
     translateY: [10, -12],
     scale: [1.5, 1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
@@ -66,23 +64,19 @@ const Scroll = () => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -80 * (slides.length),
-        ease: 'none',
+        xPercent: -130 * (slides.length - 1),
+        ease: "none",
         scrollTrigger: {
           trigger: horizontalSection.current,
           pin: true,
           start: 'top top',
-          end: '+=500%',
-          scrub: 0.5,
+          scrub: 1,
+          end: () => `+=${document.querySelector(".bg-bottom").offsetWidth}`
         },
       });
     }, horizontalSection);
     return () => ctx.revert();
   }, []);
-
-  function changeProject(e) {
-    setWhichProject(e.target.alt)
-  }
 
   const Project = () => {
     return (
@@ -108,135 +102,157 @@ const Scroll = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div className='overflow-x-hidden relative'>
+      <main id='overFlow' className='overflow-x-hidden relative'>
+        <Navbar />
         <ParallaxBanner
+          id={'banner'}
           layers={[background, foreground, gradientOverlay]}
           className="aspect-[2/1]"
+          onMouseOver={() => removeOrAddOverflow(event)}
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <TextRotator />
           </div>
         </ParallaxBanner>
+        <a name='projects'></a>
         <section
+          id={'horizontal'}
           className="horizontal-section"
           ref={horizontalSection}
           style={{backgroundImage: 'url(/underwater2.gif)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+          onMouseOver={() => removeOrAddOverflow(event)}
         >
-          <Project id='projects' className='absolute'/>
+          <Project className='absolute mt-5'/>
           <div className="horizontal-panel bg">
-            <div onMouseOver={() => changeProject(event)}>
+            <div>
               <Card 
-                id='The Fox, Chicken and Corn'
                 name='The Fox, Chicken and Corn' 
                 img={'/fox.png'} 
                 url={fcc} 
                 imgOp={'/chkinBottom2.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
-            <div onMouseOver={() => changeProject(event)}>
+            <div
+             >
               <Card 
                 name='Fiduciary Benefits Group' 
                 img={'/fbga1.png'} 
                 url={fbgUrl} 
                 imgOp={'/fbga.png'}
+                setWhichProject={setWhichProject}
               />
             </div> 
           </div>
-          <div className="horizontal-panel bg">
-            <div onMouseOver={() => changeProject(event)}>
+          <div className="horizontal-panel">
+            <div>
               <Card 
                 name='Arrowhead Tree Service' 
                 img={'/tree.png'} 
                 url={arrowUrl} 
                 imgOp={'/arbBottom1.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
-            <div onMouseOver={() => changeProject(event)}>
+            <div>
               <Card 
                 name='Stock SMS Alert' 
                 img={'/sms1.png'} 
                 url={smsUrl} 
                 imgOp={'/smsa.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
           </div>
-          <div className="horizontal-panel bg">
-            <div onMouseOver={() => changeProject(event)}>
+          <div className="horizontal-panel">
+            <div>
               <Card 
                 name='Customer Service Tool' 
                 img={'/cst5.png'} 
                 url={cstUrl} 
                 imgOp={'/cst6.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
-            <div onMouseOver={() => changeProject(event)}>
+            <div>
               <Card 
                 name='Data Entry Tool'  
                 img={'/dat4.png'} 
                 url={cst1Url} 
                 imgOp={'/dat.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
           </div >
-          <div className="horizontal-panel bg">
-            <div onMouseOver={() => changeProject(event)}>
+          <div className="horizontal-panel">
+            <div>
               <Card 
                 name='XX Artists Career Form'  
                 img={'/artm.png'} 
                 url={xxUrl} 
                 imgOp={'/art.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
-            <div onMouseOver={() => changeProject(event)}>
+            <div>
               <Card 
                 name='Real Estate Lifeline'
-                id='Google/Microsoft Calendar Integration'
                 img={'/real1.png'} 
                 url={realUrl} 
                 imgOp={'/real.png'}
+                setWhichProject={setWhichProject}
               />
             </div>
           </div>
-          <section
-            className="full-width-image-container horizontal-panel bg">
-            <div className='align-text-top'>
-              <div className='relative rotate'>
-                <Image 
-                  onMouseOver={() => changeProject(event)}
-                  className='glass-skill rounded-full'
-                  src='/sCircle.png'
-                  alt='Skills'
-                  fill={true}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-            </div>
-          </section>
         </section>    
-        <section  
-          style={{
-            backgroundImage: 'url(/orb.png)'
-          }}
-          className='bg-bottom'
+      </main>
+      <section  
+        style={{backgroundImage: 'url(/orb.png)'}}
+        className='bg-bottom'
+      >
+      <a name='about'></a>
+        <div className="full-width-image-container-bottom fade-in">
+          <h1 className='text-center'>About Me</h1>
+          <div className='flex flex-wrap justify-around'>
+            {about.map((aboutItem, index) => {
+              return (
+                <FooterCard 
+                  key={index}
+                  title={aboutItem.title}
+                  descript={aboutItem.descript}
+                  img={aboutItem.img} 
+                  name={aboutItem.name}
+                />
+              )
+            })} 
+          </div>
+        </div>
+        <a name='skills'></a>
+        <div
+          style={{backgroundImage: 'url(/ship.png)'}}
+          className="full-width-image-container horizontal-panel bg"
         >
-          <div className="full-width-image-container-bottom fade-in">
-            <h1 className='text-center'>About Me</h1>
-            <div className='flex flex-wrap justify-around'>
-              {about.map((aboutItem, index) => {
-                return (
-                  <FooterCard 
-                    key={index}
-                    title={aboutItem.title}
-                    descript={aboutItem.descript}
-                    img={aboutItem.img} 
-                    name={aboutItem.name}
-                  />
-                )
-              })} 
+          <div className='align-text-top'>
+            <h1 className='text-center'>Skills</h1>
+            <div className='relative bg-glass-skill'>
+              <Image
+                onMouseOver={() => changeProject(event, setWhichProject)}
+                className='glass-skill rounded-full rotate blend'
+                src={'/sCircle.png'}
+                alt='Skills'
+                fill={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+        <div>
+        <h1 className='text-center'>Contact Me</h1>
+          <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
+          <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+          <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1>
+        </div>
+      </section>
     </div>
   );
 };

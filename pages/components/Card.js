@@ -1,13 +1,14 @@
 import Image from "next/image";
+import { changeProject } from './Helpers/Helpers' 
 
-const Card = ({name, img, url, imgOp, id}) => {
-    return (
-      <div>
-      <a className='shadow-md container' target="_blank" href={url}>
+const Card = ({setWhichProject, name, img, url, imgOp}) => {
+  return (
+    <div>
+      <a className='shadow-md imgevento container' target="_blank" href={url}>
         <div class="max-w-md floating card bg-card rounded overflow-hidden shadow-md out-tr container">
           <Image
+            onMouseOver={() => changeProject(event, setWhichProject)}
             className='image blend'
-            id={id}
             src={img}
             alt={name}
             width={250}

@@ -11,6 +11,8 @@ body {
   /* background-image: linear-gradient(to bottom, color(display-p3 0.008 0.02 0.027), color(display-p3 0.25 0.25 0.25)); */
   font-family: 'Kaushan Script', cursive;
   /* background-color: #4783B3; */
+  scroll-behavior: smooth;
+  background-color: rgba(70,130,179,1) 
 }
 
 header {
@@ -71,13 +73,16 @@ p {
   margin:0;
 }
 
+.foot-border,
+.sticky-nav {
+  box-shadow: hsl(306, 100%, 53%) 0px 0px 0.25em, hsl(195, 100%, 61%) 0px 0.25em 1em;
+}
 .glass {
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 0 15px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 3px );
-  -webkit-backdrop-filter: blur( 4px );
+  background: rgba( 0, 0, 0, 0.7 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 10.5px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .glass-skill {
@@ -90,7 +95,13 @@ p {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.sticky {
+.glass-nav {
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 10.5px );
+  border-radius: 10px;
+}
+
+.sticky-nav {
   position: fixed !important;
 }
 
@@ -125,11 +136,11 @@ p {
 
 .main-bg {
   background: rgb(250,250,249);
-  background: linear-gradient(180deg, rgba(250,250,249,0) 53%, rgba(71,131,179,1) 100%);
+  background: linear-gradient(180deg, rgba(250,250,249,0) 93%, rgba(71,131,179,1) 100%);
 }
 .bg {
-  background: rgb(70,130,179);
-  background: linear-gradient(180deg, rgba(70,130,179,1) 0%, rgba(247,239,238,0) 24%);
+  background: rgb(87,196,204);
+background: linear-gradient(0deg, rgba(87,196,204,0) 95%, rgba(70,130,179,1) 100%);
   z-index: -1;
 }
 
@@ -162,6 +173,31 @@ p {
   pointer-events: none;
   filter: drop-shadow(0 0 0.20rem);
   z-index: 1;
+}
+
+.imgevento {
+  transform-origin: center center;
+  animation: imgevento 6s ease-in-out alternate infinite;
+  opacity: 1 !important;
+}
+
+@keyframes imgevento {
+  0%,
+  100% {
+    filter: saturate(100%) invert(0%);
+  }
+  
+  25% {
+    filter: saturate(180%) invert(10%);
+  }
+  
+  50% {
+    filter: saturate(100%) invert(0%);
+  }
+  
+  75% {
+    filter: saturate(150%) invert(20%);
+  }
 }
 
 .container:hover + .image-Op {
@@ -219,7 +255,6 @@ p {
   width: 100%;
   height: 100vh;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -273,7 +308,8 @@ p {
 }
 
 .bg-card {
-  background-color: #4882B3;
+  background: rgb(87,196,204);
+  background: linear-gradient(180deg, #154D6A 92%, rgba(186,86,29,1) 100%);
 }
 
 .floating {  

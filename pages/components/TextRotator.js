@@ -18,13 +18,13 @@ const TextRotator = () => {
     <div className="container">
       <Slider {...settings}>
         <div>
-          <h1 className='text-stone-50'>Paul Killian</h1>
+          <h1 className='blend'>Paul Killian</h1>
         </div>
         <div>
-          <h1 className='text-stone-50'>Font-End Developer</h1>
+          <h1 className='blend'>Font-End Developer</h1>
         </div>
         <div>
-          <h1 className='text-stone-50'>UI Designer</h1>
+          <h1 className='blend'>UI Designer</h1>
         </div>
       </Slider>
     </div>

@@ -23,9 +23,8 @@ export const about =
   ]
 
 export default function FooterCard({title, descript, img, name}) {
-
   return (
-    <div class="max-w-sm border border-gray-200 rounded-lg shadow m-3">
+    <div class="max-w-sm rounded-lg foot-border m-8">
       <Image 
         class="rounded-t-lg" 
         src={img}
@@ -40,9 +39,5 @@ export default function FooterCard({title, descript, img, name}) {
     </div>
   )
 }
-
- {/* <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
-                    <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-                    <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1> */}
 
 
