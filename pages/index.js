@@ -240,7 +240,6 @@ const App = () => {
             <h1 className='text-center'>Skills</h1>
             <div className='relative bg-glass-skill'>
               <Image
-                onMouseOver={() => changeProject(event, setWhichProject)}
                 className='glass-skill rounded-full rotate'
                 src={'/sCircle.png'}
                 alt='Skills'
