@@ -304,7 +304,7 @@ background: linear-gradient(0deg, rgba(87,196,204,0) 95%, rgba(70,130,179,1) 100
 }
 
 .bg-bottom {
-  background-color: #010A15 !important
+  background-color: #010A15 !important;
 }
 
 .bg-card {

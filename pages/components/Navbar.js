@@ -1,11 +1,12 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const navigation = [
   { name: 'Projects', href: '#projects', current: false },
-  { name: 'Skills', href: '#skills', current: false },
   { name: 'About', href: '#about', current: false },
+  { name: 'Skills', href: '#skills', current: false },
   { name: 'Contact', href: '#contact', current: false }
 ]
 
@@ -26,7 +27,12 @@ export default function Navbar() {
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                    <Image 
+                      alt='logo'
+                      className="block h-6 w-6" 
+                      aria-hidden="true" 
+                      src='/circle.png'
+                    />
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
@@ -34,10 +40,12 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                  <Image 
+                    alt='logo'
+                    width={50} 
+                    height={50}
+                    aria-hidden="true" 
+                    src='/el.png'
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">

@@ -89,6 +89,10 @@ const App = () => {
     }
   }
 
+  const changeProject = (e) => {
+    setWhichProject(e.target.alt)
+  }
+
   return (
     <div>
       <Head>
@@ -206,12 +210,11 @@ const App = () => {
           </div>
         </section>    
       </main>
-      <section  
-        style={{backgroundImage: 'url(/orb.png)'}}
-        className='bg-bottom'
+      <section className='bg-bottom'
       >
       <a name='about'></a>
-        <div className="full-width-image-container-bottom fade-in">
+        <div style={{backgroundImage: 'url(/ship.png)'}}
+          className="full-width-image-container-bottom">
           <h1 className='text-center'>About Me</h1>
           <div className='flex flex-wrap justify-around'>
             {about.map((aboutItem, index) => {
@@ -229,8 +232,7 @@ const App = () => {
         </div>
         <a name='skills'></a>
         <div
-          style={{backgroundImage: 'url(/ship.png)'}}
-          className="full-width-image-container horizontal-panel bg"
+          className="full-width-image-container"
         >
           <div className='align-text-top'>
             <h1 className='text-center'>Skills</h1>
@@ -246,11 +248,17 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div>
-        <h1 className='text-center'>Contact Me</h1>
-          <h1 className='text-stone-50'><a className='text-stone-50' href='mailto:psk65lava@gmail.com'>Email</a></h1>
-          <h1 className='text-stone-50'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-          <h1 className='text-stone-50'><a href='https://www.github.com/PaulKillian'>Github</a></h1>
+        <div style={{
+          backgroundImage: 'url(/mee.png)', 
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'contain'
+        }}
+        className="bottom-right text-center text-stone-50">
+        <a name='contact'></a>
+        <h1>Contact Me</h1>
+          <h1><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
+          <h1><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+          <h1><a href='https://www.github.com/PaulKillian'>Github</a></h1>
         </div>
       </section>
     </div>
