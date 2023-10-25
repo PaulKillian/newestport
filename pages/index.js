@@ -11,7 +11,7 @@ import FooterCard from './components/FooterCard'
 import Navbar from './components/Navbar'
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { about } from './components/FooterCard'
-import Project from './components/Project'
+import { TypeAnimation } from 'react-type-animation';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -58,12 +58,11 @@ const App = () => {
     ),
   };
 
-
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const slides = gsap.utils.toArray('.horizontal-panel');
       gsap.to(slides, {
-        xPercent: -130 * (slides.length - 1),
+        xPercent: -135 * (slides.length - 1),
         ease: "none",
         scrollTrigger: {
           trigger: horizontalSection.current,
@@ -76,6 +75,21 @@ const App = () => {
     }, horizontalSection);
     return () => ctx.revert();
   }, []);
+
+  const Project = () => {
+    debugger
+    return (
+      <TypeAnimation
+        sequence={[
+          whichProject
+        ]}
+        wrapper="span"
+        speed={40}
+        style={{ fontSize: '8vw', position: 'absolute', color: '#FAFAF9' }}
+        cursor={false}
+      />
+    )
+  }
 
   const removeOrAddOverflow = (e) => {
     if (e.target.className) {
@@ -123,88 +137,76 @@ const App = () => {
           style={{backgroundImage: 'url(/underwater2.gif)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
           onMouseOver={() => removeOrAddOverflow(event)}
         >
-          <Project 
-            className='absolute mt-5'
-            whichProject={whichProject}
-          />
+          <Project className='absolute' />
           <div className="horizontal-panel bg">
-            <div>
-              <Card 
+            <div onMouseOver={() => changeProject(event)}>
+              <Card
                 name='The Fox, Chicken and Corn' 
                 img={'/fox.png'} 
                 url={fcc} 
                 imgOp={'/chkinBottom2.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
-            <div
-             >
-              <Card 
+            <div onMouseOver={() => changeProject(event)}>
+              <Card
                 name='Fiduciary Benefits Group' 
                 img={'/fbga1.png'} 
                 url={fbgUrl} 
                 imgOp={'/fbga.png'}
-                setWhichProject={setWhichProject}
               />
             </div> 
           </div>
           <div className="horizontal-panel">
-            <div>
-              <Card 
+            <div onMouseOver={() => changeProject(event)}>
+              <Card
                 name='Arrowhead Tree Service' 
                 img={'/tree.png'} 
                 url={arrowUrl} 
                 imgOp={'/arbBottom1.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
-            <div>
+            <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Stock SMS Alert' 
                 img={'/sms1.png'} 
                 url={smsUrl} 
                 imgOp={'/smsa.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
           </div>
           <div className="horizontal-panel">
-            <div>
+            <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Customer Service Tool' 
                 img={'/cst5.png'} 
                 url={cstUrl} 
                 imgOp={'/cst6.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
-            <div>
+            <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Data Entry Tool'  
                 img={'/dat4.png'} 
                 url={cst1Url} 
                 imgOp={'/dat.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
           </div >
           <div className="horizontal-panel">
-            <div>
+            <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='XX Artists Career Form'  
                 img={'/artm.png'} 
                 url={xxUrl} 
                 imgOp={'/art.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
-            <div>
-              <Card 
+            <div onMouseOver={() => changeProject(event)}>
+              <Card
                 name='Real Estate Lifeline'
                 img={'/real1.png'} 
                 url={realUrl} 
                 imgOp={'/real.png'}
-                setWhichProject={setWhichProject}
               />
             </div>
           </div>
@@ -213,9 +215,9 @@ const App = () => {
       <section className='bg-bottom'
       >
       <a name='about'></a>
-        <div style={{backgroundImage: 'url(/ship.png)'}}
+        <div style={{backgroundImage: 'url(/surf.png)'}}
           className="full-width-image-container-bottom">
-          <h1 className='text-center'>About Me</h1>
+          <h1 className='text-center stroke-2 stroke-slate-900'>About Me</h1>
           <div className='flex flex-wrap justify-around'>
             {about.map((aboutItem, index) => {
               return (
@@ -239,7 +241,7 @@ const App = () => {
             <div className='relative bg-glass-skill'>
               <Image
                 onMouseOver={() => changeProject(event, setWhichProject)}
-                className='glass-skill rounded-full rotate blend'
+                className='glass-skill rounded-full rotate'
                 src={'/sCircle.png'}
                 alt='Skills'
                 fill={true}
@@ -256,9 +258,9 @@ const App = () => {
         className="bottom-right text-center text-stone-50">
         <a name='contact'></a>
         <h1>Contact Me</h1>
-          <h1><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
-          <h1><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
-          <h1><a href='https://www.github.com/PaulKillian'>Github</a></h1>
+          <h1 className='scale'><a href='mailto:psk65lava@gmail.com'>Email</a></h1>
+          <h1 className='scale'><a href='https://www.linkedin.com/in/paul-killian/'>LinkedIn</a></h1>
+          <h1 className='scale'><a href='https://www.github.com/PaulKillian'>Github</a></h1>
         </div>
       </section>
     </div>

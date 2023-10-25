@@ -1,16 +1,11 @@
 import Image from "next/image";
 
-const Card = ({setWhichProject, name, img, url, imgOp}) => {
-  const changeProject = (e) => {
-    setWhichProject(e.target.alt)
-  }
-
+const Card = ({name, img, url, imgOp}) => {
   return (
-    <div>
+    <>
       <a className='shadow-md imgevento container' target="_blank" href={url}>
         <div class="max-w-md floating card bg-card rounded overflow-hidden shadow-md out-tr container">
           <Image
-            onMouseOver={() => changeProject(event)}
             className='image blend'
             src={img}
             alt={name}
@@ -27,7 +22,7 @@ const Card = ({setWhichProject, name, img, url, imgOp}) => {
           height={700}
         />
       </div>
-    </div>
+    </>
     )
   } 
 

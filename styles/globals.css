@@ -254,8 +254,7 @@ background: linear-gradient(0deg, rgba(87,196,204,0) 95%, rgba(70,130,179,1) 100
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-attachment: fixed;
-  background-size: contain;
+  background-size: cover;
 }
 
 .projects {
@@ -325,4 +324,8 @@ background: linear-gradient(0deg, rgba(87,196,204,0) 95%, rgba(70,130,179,1) 100
   from { transform: translate(0,  0px); }
   65%  { transform: translate(0, 15px); }
   to   { transform: translate(0, -0px); }    
+}
+
+.scale:hover {
+  transform: scale(1.1);
 }
