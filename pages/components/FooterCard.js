@@ -5,19 +5,19 @@ export const about =
     {
       title: 'The Beach',
       descript: 'When I am not working, I am at the beach with my family digging deep holes for my children to play in.',
-      img: '/beach3.png',
+      img: '/beach3.webp',
       name: 'beach3'
     },
     {
       title: 'Exploration',
       descript: 'I liken web development to space exploration in its endless potential and vastness of possibilities.',
-      img: '/spc.png',
+      img: '/spc.webp',
       name: 'spc'
     }, 
     {
       title: 'Body Boarding',
       descript: "I have ridden waves my whole life. There's little that compares to the thrill of flying down a wave.",
-      img: '/wave.png',
+      img: '/wave.webp',
       name: 'wave'
     }
   ]
