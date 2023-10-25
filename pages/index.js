@@ -36,14 +36,14 @@ const App = () => {
 
   const background = {
     image:
-      'ats.png',
+      'ats.webp',
     translateY: [0, -10],
     scale: [1.25, 1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
   };
 
   const foreground = {
-    image: 'rocks.png',
+    image: 'rocks.webp',
     translateY: [10, -12],
     scale: [1.5, 1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
@@ -142,17 +142,17 @@ const App = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card
                 name='The Fox, Chicken and Corn' 
-                img={'/fox.png'} 
+                img={'/fox.webp'} 
                 url={fcc} 
-                imgOp={'/chkinBottom2.png'}
+                imgOp={'/chkinBottom2.webp'}
               />
             </div>
             <div onMouseOver={() => changeProject(event)}>
               <Card
                 name='Fiduciary Benefits Group' 
-                img={'/fbga1.png'} 
+                img={'/fbga1.webp'} 
                 url={fbgUrl} 
-                imgOp={'/fbga.png'}
+                imgOp={'/fbga.webp'}
               />
             </div> 
           </div>
@@ -160,17 +160,17 @@ const App = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card
                 name='Arrowhead Tree Service' 
-                img={'/tree.png'} 
+                img={'/tree.webp'} 
                 url={arrowUrl} 
-                imgOp={'/arbBottom1.png'}
+                imgOp={'/arbBottom1.webp'}
               />
             </div>
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Stock SMS Alert' 
-                img={'/sms1.png'} 
+                img={'/sms1.webp'} 
                 url={smsUrl} 
-                imgOp={'/smsa.png'}
+                imgOp={'/smsa.webp'}
               />
             </div>
           </div>
@@ -178,17 +178,17 @@ const App = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Customer Service Tool' 
-                img={'/cst5.png'} 
+                img={'/cst5.webp'} 
                 url={cstUrl} 
-                imgOp={'/cst6.png'}
+                imgOp={'/cst6.webp'}
               />
             </div>
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='Data Entry Tool'  
-                img={'/dat4.png'} 
+                img={'/dat4.webp'} 
                 url={cst1Url} 
-                imgOp={'/dat.png'}
+                imgOp={'/dat.webp'}
               />
             </div>
           </div >
@@ -196,17 +196,17 @@ const App = () => {
             <div onMouseOver={() => changeProject(event)}>
               <Card 
                 name='XX Artists Career Form'  
-                img={'/artm.png'} 
+                img={'/artm.webp'} 
                 url={xxUrl} 
-                imgOp={'/art.png'}
+                imgOp={'/art.webp'}
               />
             </div>
             <div onMouseOver={() => changeProject(event)}>
               <Card
                 name='Real Estate Lifeline'
-                img={'/real1.png'} 
+                img={'/real1.webp'} 
                 url={realUrl} 
-                imgOp={'/real.png'}
+                imgOp={'/real.webp'}
               />
             </div>
           </div>
@@ -215,7 +215,7 @@ const App = () => {
       <section className='bg-bottom'
       >
       <a name='about'></a>
-        <div style={{backgroundImage: 'url(/surf.png)'}}
+        <div style={{backgroundImage: 'url(/surf.webp)'}}
           className="full-width-image-container-bottom">
           <h1 className='text-center stroke-2 stroke-slate-900'>About Me</h1>
           <div className='flex flex-wrap justify-around'>
@@ -241,7 +241,7 @@ const App = () => {
             <div className='relative bg-glass-skill'>
               <Image
                 className='glass-skill rounded-full rotate'
-                src={'/sCircle.png'}
+                src={'/sCircle.webp'}
                 alt='Skills'
                 fill={true}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -250,7 +250,7 @@ const App = () => {
           </div>
         </div>
         <div style={{
-          backgroundImage: 'url(/mee.png)', 
+          backgroundImage: 'url(/mee.webp)', 
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain'
         }}

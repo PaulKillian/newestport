@@ -64,15 +64,6 @@ p {
   color: white;
 }
 
-.water {
-  background-image: url(../public/watergif.gif);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding:0;
-  margin:0;
-}
-
 .foot-border,
 .sticky-nav {
   box-shadow: hsl(306, 100%, 53%) 0px 0px 0.25em, hsl(195, 100%, 61%) 0px 0.25em 1em;
