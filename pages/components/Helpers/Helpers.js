@@ -2,8 +2,7 @@ export const changeProject = (e, setWhichProject) => {
   setWhichProject(e.target.alt)
 }
 
-export const removeOrAddOverflow = (e) => {
-  debugger
+const removeOrAddOverflow = (e) => {
   if (e.target.className === 'blend') {
     const element = document.getElementById('overFlow')
     element.classList.add('overflow-x-hidden');
@@ -12,3 +11,5 @@ export const removeOrAddOverflow = (e) => {
     element.classList.remove('overflow-x-hidden');
   } 
 }
+
+export default removeOrAddOverflow
