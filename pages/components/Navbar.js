@@ -31,7 +31,7 @@ export default function Navbar() {
                       alt='logo'
                       className="block h-6 w-6" 
                       aria-hidden="true" 
-                      src='/circle.webp'
+                      src='/El.webp'
                     />
                   ) : (
                     <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
