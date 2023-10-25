@@ -9,7 +9,7 @@ const removeOrAddOverflow = (e) => {
   } else {
     const element = document.getElementById('overFlow')
     element.classList.remove('overflow-x-hidden');
-  } 
+  }
 }
 
 export default removeOrAddOverflow

@@ -12,7 +12,7 @@ import Navbar from './components/Navbar'
 import { TypeAnimation } from 'react-type-animation';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { about } from './components/FooterCard'
-import { changeProject, removeOrAddOverflow } from './components/Helpers/Helpers'
+import { changeProject, removeOrAddOverflow } from './helpers/Helpers'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);

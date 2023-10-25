@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { changeProject } from './Helpers/Helpers' 
+import { changeProject } from '../helpers/Helpers' 
 
 const Card = ({setWhichProject, name, img, url, imgOp}) => {
   return (
